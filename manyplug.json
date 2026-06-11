@@ -1,0 +1,11 @@
+{
+  "name": "mcb-server",
+  "version": "2.2.0",
+  "description": "Shows when someone enter in your Minecraft Server",
+  "category": "utility",
+  "service": false,
+  "author": "SyntaxError <me@stxerr.dev> (https://www.stxerr.dev)",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {}
+}
