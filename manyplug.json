@@ -1,11 +1,14 @@
 {
   "name": "mcb-server",
-  "version": "2.2.0",
+  "key": "synt-xerror/mcb-server",
+  "author": {
+    "name": "SyntaxError",
+    "email": "me@stxerr.dev",
+    "website": "https://www.stxerr.dev"
+  },
   "description": "Shows when someone enter in your Minecraft Server",
+  "version": "2.2.0",
   "category": "utility",
   "service": false,
-  "author": "SyntaxError <me@stxerr.dev> (https://www.stxerr.dev)",
-  "license": "MIT",
-  "main": "index.js",
   "dependencies": {}
 }
