@@ -6,6 +6,7 @@
     "email": "me@stxerr.dev",
     "website": "https://www.stxerr.dev"
   },
+  "license": "MIT",
   "description": "Shows when someone enter in your Minecraft Server",
   "version": "2.2.0",
   "category": "utility",
