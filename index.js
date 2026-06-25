@@ -32,7 +32,7 @@ function handleLine(line) {
   const joinMatch = line.match(/Player Spawned: (.+?) xuid:/);
   if (joinMatch) {
     const groupId = ctxRef.config.get("MC_GROUP_ID");
-    ctxRef.sendTo(groupId, tRef("messages.playerConnected", { name: joinMatch[1] }));
+    ctxRef.send.to(groupId).text(tRef("messages.playerConnected", { name: joinMatch[1] }));
     players.push(joinMatch[1]);
     savePlayers(players);
     return;
@@ -41,7 +41,7 @@ function handleLine(line) {
   const leaveMatch = line.match(/Player disconnected: (.+?), xuid:/);
   if (leaveMatch) {
     const groupId = ctxRef.config.get("MC_GROUP_ID");
-    ctxRef.sendTo(groupId, tRef("messages.playerDisconnected", { name: leaveMatch[1] }));
+    ctxRef.send.to(groupId).text(tRef("messages.playerDisconnected", { name: leaveMatch[1] }));
     players = players.filter(p => p !== leaveMatch[1]);
     savePlayers(players);
   }
@@ -78,10 +78,10 @@ export default async function (ctx) {
   const prefix  = ctx.config.get("CMD_PREFIX");
   const { t }   = ctx.i18n.createT(import.meta.url);
 
-  if (msg.is(prefix + "players")) {
+  if (msg.is("players")) {
     const list = players.length
       ? players.join("\n")
       : t("messages.noPlayers");
-    await msg.reply(`🎮 Players online (${players.length}):\n${list}`);
+    await msg.reply.text(`🎮 Players online (${players.length}):\n${list}`);
   }
 }
